@@ -1,0 +1,26 @@
+/* подключение шрифтов Inter */
+@font-face {
+    font-family: 'Inter';
+    src: url('./inter/Inter-Regular/Inter-Regular.eot');
+    src: url('./inter/Inter-Regular/Inter-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./inter/Inter-Regular/Inter-Regular.woff2') format('woff2'),
+        url('./inter/Inter-Regular/Inter-Regular.woff') format('woff'),
+        url('./inter/Inter-Regular/Inter-Regular.ttf') format('truetype'),
+        url('./inter/Inter-Regular/Inter-Regular.svg#Inter-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./inter/Inter-Medium/Inter-Medium.eot');
+    src: url('./inter/Inter-Medium/Inter-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./inter/Inter-Medium/Inter-Medium.woff2') format('woff2'),
+        url('./inter/Inter-Medium/Inter-Medium.woff') format('woff'),
+        url('./inter/Inter-Medium/Inter-Medium.ttf') format('truetype'),
+        url('./inter/Inter-Medium/Inter-Medium.svg#Inter-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

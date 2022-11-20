@@ -1,0 +1,75 @@
+.movies-card {
+    width: 100%;
+}
+
+.movies-card__link {
+    width: 100%;
+    display: block;
+}
+
+.movies-card__row {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 29px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.movies-card__title {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    margin: 0;
+}
+
+.movies-card__elements-like {
+    background: #F4F4F4;
+    border-radius: 36px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+.movies-card__like {
+    border: none;
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.27273 0C6.27273 0 5.54545 0.523077 5 1.08974C4.45455 0.566667 3.72727 0 2.72727 0C1.13636 0 0 1.2641 0 2.83333C0 3.61795 0.318182 4.31538 0.909091 4.79487L5 8.5L9.09091 4.79487C9.63636 4.27179 10 3.61795 10 2.83333C10 1.2641 8.86364 0 7.27273 0Z' fill='white'/%3E%3C/svg%3E%0A");
+    cursor: pointer;
+    transition: .3s;
+}
+
+.movies-card__like_active {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.27273 0C6.27273 0 5.54545 0.523077 5 1.08974C4.45455 0.566667 3.72727 0 2.72727 0C1.13636 0 0 1.2641 0 2.83333C0 3.61795 0.318182 4.31538 0.909091 4.79487L5 8.5L9.09091 4.79487C9.63636 4.27179 10 3.61795 10 2.83333C10 1.2641 8.86364 0 7.27273 0Z' fill='%23EE3465'/%3E%3C/svg%3E%0A");
+}
+
+.movies-card__like:focus {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='24' height='24' rx='12' fill='%23F4F4F4'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 13.0605L14.6516 15.7121L15.7122 14.6514L13.0607 11.9999L15.7121 9.34844L14.6514 8.28778L12 10.9392L9.34826 8.28748L8.2876 9.34814L10.9393 11.9999L8.28748 14.6517L9.34814 15.7124L12 13.0605Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+
+.movies-card__duration {
+    margin: 0;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #A0A0A0;
+    margin-top: 6px;
+}
+
+@media screen and (max-width: 828px) {
+    .movies-card__row {
+        margin-top: 14px;
+    }
+}
+
+@media screen and (max-width: 604px) {
+    .movies-card__row {
+        margin-top: 15px;
+    }
+}
