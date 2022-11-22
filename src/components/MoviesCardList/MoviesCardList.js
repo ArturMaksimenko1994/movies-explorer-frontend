@@ -25,7 +25,9 @@ const MoviesCardList = () => {
                 <MoviesCard />
                 <MoviesCard />
             </div>
-            <button className="movies-cardlist__show">Ещё</button>
+            <div className="movies-cardlist__bottom">
+                <button className="movies-cardlist__show" type="button">Ещё</button>
+            </div>
         </section>
     )
 }

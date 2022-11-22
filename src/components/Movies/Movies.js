@@ -5,11 +5,13 @@ import MoviesCardList from './../MoviesCardList/MoviesCardList';
 
 import './Movies.css';
 
-function Movies () {
+function Movies() {
   return (
     <section className="movies">
-      <SearchForm />
-      <MoviesCardList /> 
+      <div className="movies__container">
+        <SearchForm />
+        <MoviesCardList />
+      </div>
     </section>
   );
 }

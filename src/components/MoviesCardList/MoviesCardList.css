@@ -56,4 +56,9 @@
     grid-row-gap: 14px;
     padding: 40px 10px 50px 10px;
   }
+
+  .movies-cardlist__bottom {
+    padding: 0 14px;
+  }
+
 }

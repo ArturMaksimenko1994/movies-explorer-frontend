@@ -29,3 +29,10 @@
     box-shadow: none;
     cursor: not-allowed;
 }
+
+@media screen and (max-width: 603px) {
+    .form-submit-btn {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

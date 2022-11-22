@@ -11,8 +11,8 @@ const FilterCheckBox = memo(() => {
 
     return (
         <div className="search-short">
-            <div className={`search-short-box  ${isSelectedShortMovie ? "search-short-box_active" : "" }`} onClick={onSelectShortMovie}>
-                <div className={`seach-short-item ${isSelectedShortMovie ? "seach-short-item_active" : "" }`} />
+            <div className={`search-short-box ${isSelectedShortMovie ? "search-short-box_active" : ""}`} onClick={onSelectShortMovie}>
+                <div className={`seach-short-item ${isSelectedShortMovie ? "seach-short-item_active" : ""}`} />
             </div>
         </div>
     );

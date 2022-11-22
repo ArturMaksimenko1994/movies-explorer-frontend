@@ -5,3 +5,9 @@
     margin: 0 0 57px;
     color: #EE3465;
 }
+
+@media screen and (max-width: 603px) {
+    .form-error-message {
+        margin: 0 0 157px;
+    }
+}

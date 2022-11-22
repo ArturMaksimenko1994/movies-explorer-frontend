@@ -142,3 +142,9 @@
         display: block;
     }
 }
+
+@media screen and (max-width: 603px) {
+    .burger-menu__items_active {
+        width: 100%;
+    }
+}
