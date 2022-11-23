@@ -10,7 +10,6 @@ const NavTab = () => {
             </li>
             <li className="nav-tab__item">
                 <a className="nav-tab__link" href="#techs">Технологии</a>
-
             </li>
             <li className="nav-tab__item">
                 <a className="nav-tab__link" href="#me">Студент</a>

@@ -3,10 +3,7 @@ import './FormSubmitBtn.css';
 
 function FormSubmitBtn({ text }) {
   return (
-    <button
-      type="submit"
-      className={"form-submit-btn"}
-    >
+    <button type="submit" className={"form-submit-btn"}>
       {text}
     </button>
   );

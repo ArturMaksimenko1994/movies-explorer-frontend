@@ -10,7 +10,7 @@ const MoviesCard = () => (
             <div className="movies-card__row">
                 <h2 className="movies-card__title">33 слова о дизайне</h2>
                 <div className="movies-card__elements-like">
-                    <button className="movies-card__like movies-card__like_active"></button>
+                    <button className="movies-card__like movies-card__like_active" type="button"></button>
                 </div>
             </div>
             <p className="movies-card__duration">1ч 42м</p>

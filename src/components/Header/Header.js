@@ -1,14 +1,11 @@
 import React from "react"
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Logo from './../Logo/Logo';
-import Account from '../Account/Account';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import Navigation from './../Navigation/Navigation';
+import LogLink from './../LogLink/LogLink';
 
 import './Header.css';
-
-const setActive = ({ isActive }) => isActive ? 'header__link header__link_active ' : 'header__link';
-
 
 const Header = () => {
 
@@ -21,19 +18,8 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className="header__row">
-                    <nav className="header__nav-movies">
-                        <NavLink to="/movies" className={setActive}>Фильмы</NavLink>
-                        <NavLink to="/saved-movies" className={setActive}>Сохранённые фильмы</NavLink>
-                    </nav>
-                    <nav className="header__nav">
-                        <NavLink to="/signup" className="header__link">Регистрация</NavLink>
-                        <NavLink to="/signin" className="header__link header__link_btn_blue">Войти</NavLink>
-                        <Link to="/profile" className="header__account">
-                            <p className="header__text">Аккаунт</p>
-                            <Account />
-                        </Link>
-                        <BurgerMenu />
-                    </nav>
+                    <Navigation />
+                    {/* <LogLink /> */}
                 </div>
             </div>
         </header>
