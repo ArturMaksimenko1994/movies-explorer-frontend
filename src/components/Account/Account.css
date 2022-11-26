@@ -1,0 +1,20 @@
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F5F5F5;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.account:hover {
+    opacity: .7;
+}
+
+.account__img {
+    width: 10px;
+    height: 10px;
+}

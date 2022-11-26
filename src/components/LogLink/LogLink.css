@@ -1,0 +1,33 @@
+.logLink {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.logLink__link {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logLink__link_btn_blue {
+    padding: 8px 20px;
+    background: #3456F3;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    transition: .3s;
+    margin-left: 30px;
+}
+
+.logLink__link_btn_blue:hover {
+    opacity: .8;
+}

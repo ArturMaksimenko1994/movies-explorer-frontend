@@ -1,0 +1,161 @@
+.search-row {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.search-row__container {
+    padding: 80px 70px 0px 70px;
+}
+
+.search-row__hardly {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 70px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F5F5F5;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    border-radius: 9px 0 0 9px;
+}
+
+.search-form::after {
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='14' viewBox='0 0 13 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.79268 8.2638C6.36075 9.69572 4.03915 9.69572 2.60723 8.2638C1.1753 6.83188 1.1753 4.51027 2.60723 3.07835C4.03915 1.64643 6.36075 1.64643 7.79268 3.07835C9.2246 4.51027 9.2246 6.83188 7.79268 8.2638ZM8.23306 9.64676C6.27283 11.1462 3.45724 10.9994 1.66442 9.20661C-0.288204 7.25399 -0.288204 4.08816 1.66442 2.13554C3.61704 0.182918 6.78286 0.182918 8.73549 2.13554C10.5282 3.92829 10.675 6.74371 9.17584 8.70392L12.7425 12.2706L11.7997 13.2134L8.23306 9.64676Z' fill='%23959595'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    top: 50%;
+    left: 28px;
+    transform: translate(0, -50%);
+    z-index: 9;
+}
+
+.search-form__input {
+    background: #F5F5F5;
+    color: #A0A0A0;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    width: 100%;
+    line-height: 17px;
+    padding: 25px 20px 25px 63px;
+    box-sizing: border-box;
+    z-index: 1;
+    border-radius: 9px 0 0 9px;
+    transition: .3s;
+}
+
+.search-form__bottom {
+    max-width: 65px;
+    width: 100%;
+    border-right: 1px solid #E8E8E8;
+}
+
+.search-form__btn {
+    max-width: 34px;
+    width: 100%;
+    height: 34px;
+    border: none;
+    background: #3456F3;
+    border-radius: 50%;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 226px;
+
+}
+
+.search-form__btn::after {
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='14' viewBox='0 0 13 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.79268 8.2638C6.36075 9.69572 4.03915 9.69572 2.60723 8.2638C1.1753 6.83188 1.1753 4.51027 2.60723 3.07835C4.03915 1.64643 6.36075 1.64643 7.79268 3.07835C9.2246 4.51027 9.2246 6.83188 7.79268 8.2638ZM8.23306 9.64676C6.27283 11.1462 3.45724 10.9994 1.66442 9.20661C-0.288204 7.25399 -0.288204 4.08816 1.66442 2.13554C3.61704 0.182918 6.78286 0.182918 8.73549 2.13554C10.5282 3.92829 10.675 6.74371 9.17584 8.70392L12.7425 12.2706L11.7997 13.2134L8.23306 9.64676Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.search-form__btn:hover {
+    box-shadow: 0 0 7px #4285F4;
+    cursor: pointer;
+}
+
+.search-form__btn:disabled {
+    background: #202020;
+    filter: blur(2px);
+}
+
+.search__checkbox {
+    background: #F5F5F5;
+    height: 71px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 29px;
+    border-radius: 0 9px 9px 0;
+}
+
+.search__text {
+    margin-left: 14px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+}
+
+@media screen and (max-width: 828px) {
+    .search-row__container {
+        padding: 80px 30px 120px 30px;
+    }
+
+    
+    .search__checkbox {
+        padding: 0 19px 0 19px;
+    }
+}
+
+@media screen and (max-width: 604px) {
+    .search-row__container {
+        padding: 80px 10px 0px 10px;
+    }
+
+    .search-row__hardly {
+        padding-bottom: 45px;
+    }
+    
+    .search-form__input {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .search-row__hardly {
+        flex-direction: column;
+    }
+
+    .search-form__bottom {
+        border: none;
+    }
+
+    .search-form {
+        border-radius: 9px 9px 9px 9px;
+    }
+
+    .search__checkbox {
+        background: none;
+        height: 18px;
+        margin-top: 46px;
+    }
+}
