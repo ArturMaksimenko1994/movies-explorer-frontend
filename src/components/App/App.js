@@ -320,6 +320,7 @@ function App() {
   return (
 
     <CurrentUserContext.Provider value={currentUser}>
+      
       <div className="app">
         <Preloader isOpen={isLoading} />
         <SomethingWentWrongPopup isOpen={isSomethingWentWrongPopupOpen} onClose={closeAllPopups} />
