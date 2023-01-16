@@ -1,9 +1,15 @@
 import React from 'react';
 import './FormSubmitBtn.css';
 
-function FormSubmitBtn({ text }) {
+function FormSubmitBtn({ text, isValid }) {
+
+  let styles = isValid ? 'form-submit-btn form-submit-btn_active' : 'form-submit-btn'
+
   return (
-    <button type="submit" className={"form-submit-btn"}>
+    <button
+      disabled={!isValid}
+      onSubmit={(e) => e.preventDefault} type="submit"
+      className={styles}>
       {text}
     </button>
   );

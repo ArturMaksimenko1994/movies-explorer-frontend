@@ -1,0 +1,19 @@
+.error-message{
+    margin-top: 5px;
+    align-self: flex-start;
+    color: #FF4062;
+    opacity: 0;
+    transition: all 0.9s ease;
+}
+
+.error-message_active{
+    opacity: 1;
+    display: block;
+}
+
+.error-message__text {
+    margin: 0;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+}

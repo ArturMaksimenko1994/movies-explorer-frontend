@@ -1,21 +1,41 @@
-import { useCallback, useState, memo } from "react";
-import "./FilterCheckBox.css";
+import React from 'react';
+import './FilterCheckbox.css';
 
-const FilterCheckBox = memo(() => {
+function FilterCheckbox(props){
+    
+    const [value, setValue] = React.useState('');
 
-    const [isSelectedShortMovie, setIsSelectedIsShortMovie] = useState(false);
+    function handleChange(e) {
+    setValue(e.target.value);
+    }
 
-    const onSelectShortMovie = useCallback(() => setIsSelectedIsShortMovie(!isSelectedShortMovie),
-        [isSelectedShortMovie]
-    );
+    function toggleFilterCheckbox() {
+        if( props.isSelected === true) {
+            props.searchShortFilms()
+        }
+        else{props.searchAllFilms()}
+    }
 
-    return (
-        <div className="search-short">
-            <div className={`search-short-box ${isSelectedShortMovie ? "search-short-box_active" : ""}`} onClick={onSelectShortMovie}>
-                <div className={`seach-short-item ${isSelectedShortMovie ? "seach-short-item_active" : ""}`} />
+    return(
+        <div className='filter-checkbox'>
+            <div className={`filter-checkbox__form ${
+              props.isSelected ? 'filter-checkbox__form_active' : ''
+            }`} onClick={toggleFilterCheckbox}>
+                <input 
+                    required
+                    type='checkbox'
+                    name="checkbox"
+                    value={value}
+                    onChange={handleChange}
+                    id='filter-checkbox'
+                    className='filter-checkbox__tub'/>
+                <div className={`filter-checkbox__button ${
+                props.isSelected ? 'filter-checkbox__button_active' : ''}`}>
+              </div>
             </div>
+                <p className='filter-checkbox__text'>Короткометражки</p>
         </div>
-    );
-});
+    )
+}
 
-export default FilterCheckBox;
+export default FilterCheckbox;

@@ -4,31 +4,44 @@ import MoviesCard from "./../MoviesCard/MoviesCard";
 
 import './MoviesCardList.css';
 
-const MoviesCardList = () => {
+
+
+const MoviesCardList = (props) => {
     return (
-        <section className="movies-cardlist">
+        <div className="movies-cardlist">
             <div className="movies-cardlist__row">
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
-                <MoviesCard />
+                {props.isMovies ? props.cards.map((item, index) => {
+                   
+                    return (
+
+                        <MoviesCard
+                            saveCard={props.saveCard}
+                            card={item}
+                            key={index}
+                            trailerLink={item.trailerLink}
+                            image={`https://api.nomoreparties.co${item.image.url}`}
+                            nameRU={item.nameRU}
+                            duration={item.duration}
+                            isSaved={props.isSaved}
+                            isLiked={props.isLiked(item)}
+                        />
+                    )
+                }) : props.savedCards.map((item, index) => {
+                    return (
+                        <MoviesCard
+                            deleteCard={props.deleteCard}
+                            card={item}
+                            key={index}
+                            trailerLink={item.trailerLink}
+                            image={item.image}
+                            nameRU={item.nameRU}
+                            duration={item.duration}
+                            isSaved={props.isSaved}
+                        />
+                    )
+                })}
             </div>
-            <div className="movies-cardlist__bottom">
-                <button className="movies-cardlist__show" type="button">Ещё</button>
-            </div>
-        </section>
+        </div>
     )
 }
 

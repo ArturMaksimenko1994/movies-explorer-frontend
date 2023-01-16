@@ -7,7 +7,7 @@ import LogLink from './../LogLink/LogLink';
 
 import './Header.css';
 
-const Header = () => {
+const Header = (props) => {
 
     return (
         <header className="header">
@@ -18,8 +18,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className="header__row">
-                    <Navigation />
-                    {/* <LogLink /> */}
+                {!props.loggedIn ? <LogLink/> : <Navigation onClick={props.onClick}/>}
                 </div>
             </div>
         </header>

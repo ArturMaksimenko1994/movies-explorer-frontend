@@ -43,38 +43,15 @@
     border: none;
     outline: none;
     background: none;
-    color: white;
     text-align: end;
+    width: 80%;
   }
   
   .profile__input-label:last-of-type {
     border-bottom: none;
     margin-bottom: 0;
   }
-  
-  .profile__submit-btn {
-      width: 100%;
-      padding: 13px 0 15px 0;
-      border: none;
-      outline: none;
-      background: #4285F4;
-      border-radius: 3px;
-      font-size: 14px;
-      line-height: 17px;
-      text-align: center;
-      color: #FFFFFF;
-      font-weight: 500;
-      margin-top: auto;
-      cursor: pointer;
-      transition: all .5s ease;
-  }
-  
-  .profile__submit-btn:hover {
-    box-shadow: 0px 0px 7px #4285f4;
-    opacity: .8;
-  }
-  
-  
+
   .profile__submit-btn_disabled {
     background: #F8F8F8;
     color: #C2C2C2;
@@ -96,7 +73,9 @@
     margin-top: auto;
     margin-bottom: 16px;
     cursor: pointer;
+    opacity: .2;
     transition: all .5s ease;
+    pointer-events: none;
   }
   
   .profile__edit-btn:hover {
@@ -120,10 +99,16 @@
     border: none;
     cursor: pointer;
     transition: all .5s ease;
+  
   }
   
   .profile__sign-out-btn:hover {
     opacity: .7;
+  }
+
+  .profile__edit-btn_active {
+    opacity: 1;
+    pointer-events: all;
   }
   
   @media screen and (max-width: 850px) {
@@ -159,3 +144,4 @@
       margin-bottom: 31%;
     }
   }
+

@@ -13,16 +13,18 @@ const Navigation = () => {
 
     return (
         <nav className="navigation">
-            
+
             <div className="navigation__movies">
                 <NavLink to="/movies" className={setActive}>Фильмы</NavLink>
                 <NavLink to="/saved-movies" className={setActive}>Сохранённые фильмы</NavLink>
             </div>
-
-            <Link to="/profile" className="navigation__account">
-                <p className="navigation__text">Аккаунт</p>
+            <div className="navigation__account">
+                <NavLink to="/profile" className={setActive}>
+                    <p className="navigation__text">Аккаунт</p>
+                </NavLink>
                 <Account />
-            </Link>
+            </div>
+
             <BurgerMenu />
         </nav>
     )
