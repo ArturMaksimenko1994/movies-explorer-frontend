@@ -6,3 +6,6 @@ IP 51.250.92.123 https://artur.movie.nomoredomains.rocks
 
 # Ссылка на сгенерированный макет
 https://drive.google.com/file/d/1H0lVOxLjZ1yfD1QRrLjTPDYQhsNWE6W_/view
+
+# Ссылка на pull request
+https://github.com/ArturMaksimenko1994/movies-explorer-frontend/pull/2
