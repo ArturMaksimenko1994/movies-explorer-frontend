@@ -42,11 +42,11 @@ const SearchForm = (props) => {
                         </div>
                     </form>
                     <div className="search__checkbox">
+                        FilterCheckbox
                         <FilterCheckbox
                             isSelected={props.isSelected}
                             searchShortFilms={props.searchShortFilms}
-                            searchAllFilms={props.searchAllFilms}
-                        />
+                            searchAllFilms={props.searchAllFilms}/>
                     </div>
                 </div>
             </div>
