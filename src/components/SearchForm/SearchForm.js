@@ -42,7 +42,6 @@ const SearchForm = (props) => {
                         </div>
                     </form>
                     <div className="search__checkbox">
-                        FilterCheckbox
                         <FilterCheckbox
                             isSelected={props.isSelected}
                             searchShortFilms={props.searchShortFilms}
