@@ -19,7 +19,7 @@ const Register = (props) => {
     const navigate = useNavigate();
 
     function logUp() {
-       props.openUserExists()
+        props.openUserExists()
         navigate('/signin', { replace: true });
     }
 
@@ -30,12 +30,11 @@ const Register = (props) => {
         auth.register(validation.values.name, validation.values.email, validation.values.password)
             .then((res) => {
                 if (res) {
-                    logUp()  
-                } 
-            })
-            .catch(() => {
-                props.openErrorPopup()
+                    logUp()
                 }
+            }).catch(() => {
+                props.openErrorPopup()
+            }
             )
     }
 

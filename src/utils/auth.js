@@ -18,9 +18,7 @@ export const register = (name, email, password) => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({ name, email, password }),
-    })
-
-        .then((res) => {
+    }).then((res) => {
             return checkResponce(res);
         });
 };
