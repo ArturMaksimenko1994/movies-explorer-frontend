@@ -18,10 +18,9 @@ const Register = (props) => {
 
     const navigate = useNavigate();
 
-    function logUp(token) {
-        localStorage.setItem("token", token);
-        props.handleLogin();
-        navigate('/', { replace: true });
+    function logUp() {
+        props.openUserExists()
+        navigate('/signin', { replace: true });
     }
 
     //регистрация пользователя
@@ -30,10 +29,12 @@ const Register = (props) => {
         // здесь обработчик регистрации
         auth.register(validation.values.name, validation.values.email, validation.values.password)
             .then((res) => {
-                if (res.token) {
-                    logUp(res.token);
+                if (res.includes(409)) {
+                    logUp()
+                } else if (res.includes(400)) {
+                    props.openErrorPopup()
                 } else {
-                    props.openErrorPopup(); 
+                    props.openErrorPopup()
                 }
             }).catch(() => {
                 props.openErrorPopup()
