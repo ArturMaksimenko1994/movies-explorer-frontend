@@ -1,4 +1,4 @@
-export const BASE_URL = "api.artur.movie.nomoredomains.rocks"; //ссылка на url api
+export const BASE_URL = "https://artur.movie.nomoredomains.rocks"; //ссылка на url api
 
 //проверка ответа
 function checkResponce(res) {

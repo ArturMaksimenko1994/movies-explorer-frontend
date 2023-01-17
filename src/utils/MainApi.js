@@ -62,7 +62,7 @@ class MainApi {
     }
     
   const mainApi = new MainApi({
-    url: "api.artur.movie.nomoredomains.rocks/",
+    url: "https://artur.movie.nomoredomains.rocks/",
     headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
         "Content-Type": "application/json",
