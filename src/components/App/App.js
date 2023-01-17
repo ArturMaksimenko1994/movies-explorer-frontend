@@ -26,6 +26,7 @@ import SomethingWentWrongPopup from '../SomethingWentWrongPopup/SomethingWentWro
 import NothingFoundPopup from '../NothingFoundPopup/NothingFoundPopup';
 import WrongUserInfoPopup from '../WrongUserInfoPopup/WrongUserInfoPopup';
 import UserInfoChangedPopup from '../UserInfoChangedPopup/UserInfoChangedPopup';
+import TheUserExists from '../TheUserExists/TheUserExists';
 
 // импортируем CSS
 import './App.css';
@@ -49,9 +50,10 @@ function App() {
   const [isNothingFoundPopupOpen, setIsNothingFoundPopupOpen] = useState(false);
   const [isWrongUserInfoPopupOpen, setIsWrongUserInfoPopupOpen] = useState(false);
   const [isUserInfoChangedPopupOpen, setIsUserInfoChangedPopupOpen] = useState(false);
+  const [isTheUserExists, setTheUserExists] = useState(false);
 
   const [loggedIn, setLoggedIn] = useState();
-  const handleLogin = () => {   
+  const handleLogin = () => {
     setLoggedIn(true)
   }
 
@@ -161,6 +163,9 @@ function App() {
     localStorage.removeItem('keyWord');
     localStorage.removeItem('isCheckboxSelected');
     setCurrentUser({});
+    setSavedCards([]);
+    setCards([]);
+    mainApi.updateToken();
     navigate('/', { replace: true });
   }
 
@@ -168,7 +173,10 @@ function App() {
   function updateUserInfo(name, email) {
     handleTokenCheck()
     mainApi.updateUserInfo(name, email)
-      .then((data) => setCurrentUser(data))
+      .then((data) => {
+        setCurrentUser(data);
+        setIsUserInfoChangedPopupOpen(true)
+      })
       .catch(() => openSomethingWentWrongPopup())
   }
 
@@ -281,12 +289,12 @@ function App() {
 
 
   function searchFilms(movies, keyWord) {
-    if (isCheckboxSelected === true) {
-      const foundMovies = movies.filter(function (item) { return item.description.toLowerCase().includes(keyWord.toLowerCase()) || item.nameRU.toLowerCase().includes(keyWord.toLowerCase()) });
+    if (!isCheckboxSelected === true) {
+      const foundMovies = movies.filter(function (item) { return item.nameEN.toLowerCase().includes(keyWord.toLowerCase()) || item.nameRU.toLowerCase().includes(keyWord.toLowerCase()) });
       return foundMovies
     }
     else {
-      const foundMovies = movies.filter(function (item) { return item.duration > 40 && (item.description.toLowerCase().includes(keyWord.toLowerCase()) || item.nameRU.toLowerCase().includes(keyWord.toLowerCase())) });
+      const foundMovies = movies.filter(function (item) { return item.duration < 40 && (item.nameEN.toLowerCase().includes(keyWord.toLowerCase()) || item.nameRU.toLowerCase().includes(keyWord.toLowerCase())) });
       return foundMovies
     }
   }
@@ -311,29 +319,35 @@ function App() {
     setIsSomethingWentWrongPopupOpen(false)
     setIsWrongUserInfoPopupOpen(false)
     setIsUserInfoChangedPopupOpen(false)
+    setTheUserExists(false)
   }
 
-  function openWrongUserInfoPopup(){
+  function openWrongUserInfoPopup() {
     setIsWrongUserInfoPopupOpen(true)
+  }
+
+  function openTheUserExists() {
+    setTheUserExists(true)
   }
 
   return (
 
     <CurrentUserContext.Provider value={currentUser}>
-      
+
       <div className="app">
         <Preloader isOpen={isLoading} />
         <SomethingWentWrongPopup isOpen={isSomethingWentWrongPopupOpen} onClose={closeAllPopups} />
         <NothingFoundPopup isOpen={isNothingFoundPopupOpen} onClose={closeAllPopups} />
         <WrongUserInfoPopup isOpen={isWrongUserInfoPopupOpen} onClose={closeAllPopups} />
         <UserInfoChangedPopup isOpen={isUserInfoChangedPopupOpen} onClose={closeAllPopups} />
+        <TheUserExists isOpen={isTheUserExists} onClose={closeAllPopups} />
 
         <Header loggedIn={loggedIn} />
 
         <Routes>
 
           <Route path="/movies" element={
-          
+
             <ProtectedRoute
               loggedIn={loggedIn}
               saveCard={handleLike}
@@ -382,7 +396,9 @@ function App() {
 
           <Route path="/signup" element={
             <User title="Добро пожаловать!">
-              <Register openErrorPopup={openWrongUserInfoPopup}/>
+              <Register
+              openUserExists={openTheUserExists}
+              openErrorPopup={openWrongUserInfoPopup} />
             </User>} />
 
           <Route path="/signin" element={

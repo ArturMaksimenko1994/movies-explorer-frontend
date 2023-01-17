@@ -18,7 +18,7 @@ const Login = (props) => {
 
     const navigate = useNavigate();
 
-    //Запись токена и редирект в main
+    //Запись токена и редирект в movies
     function logIn(token) {
         localStorage.setItem("token", token);
         props.handleLogin();

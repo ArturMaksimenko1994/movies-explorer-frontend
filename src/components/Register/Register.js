@@ -18,20 +18,25 @@ const Register = (props) => {
 
     const navigate = useNavigate();
 
+    function logUp() {
+       props.openUserExists()
+        navigate('/signin', { replace: true });
+    }
+
     //регистрация пользователя
     const handleSubmit = (e) => {
         e.preventDefault();
         // здесь обработчик регистрации
-        auth.register(validation.values.name, validation.values.email, validation.values.password).then((res) => {
-            if (res.token) {
-                navigate('/signin', { replace: true });
-            } else {
+        auth.register(validation.values.name, validation.values.email, validation.values.password)
+            .then((res) => {
+                if (res) {
+                    logUp()  
+                } 
+            })
+            .catch(() => {
                 props.openErrorPopup()
-            }
-        }).catch((err) => {
-            props.openErrorPopup()
-        }
-        )
+                }
+            )
     }
 
     return (
@@ -73,8 +78,8 @@ const Register = (props) => {
                 />
                 <ErrorMessage isActive={validation.errors.password} message={`Введите пароль`} />
             </FormLabel>
-        
-            <FormSubmitBtn isValid={validation.isValid} text={'Зарегистрироваться'} /> 
+
+            <FormSubmitBtn isValid={validation.isValid} text={'Зарегистрироваться'} />
         </Form>
     );
 }

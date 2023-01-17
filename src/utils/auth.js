@@ -1,4 +1,4 @@
-export const BASE_URL = "https://api.artur.movie.nomoredomains.rocks"; //ссылка на url api
+export const BASE_URL = "https://api.movies-explorer.molch.nomoredomains.icu"; //ссылка на url api
 
 //проверка ответа
 function checkResponce(res) {
@@ -42,8 +42,6 @@ export const authorize = (email, password) => {
             return res;
         })
         .catch((error)=>{
-            debugger
-            console.log('12345' ,error)
         })
 };
 
