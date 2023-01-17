@@ -18,9 +18,10 @@ const Register = (props) => {
 
     const navigate = useNavigate();
 
-    function logUp() {
-        props.openUserExists()
-        navigate('/signin', { replace: true });
+    function logUp(token) {
+        localStorage.setItem("token", token);
+        props.handleLogin();
+        navigate('/', { replace: true });
     }
 
     //регистрация пользователя
@@ -29,11 +30,9 @@ const Register = (props) => {
         // здесь обработчик регистрации
         auth.register(validation.values.name, validation.values.email, validation.values.password)
             .then((res) => {
-                if (res) {
-                    props.openUserExists() 
-                } else {
-                    props.openErrorPopup()
-                }
+                if (res.token) {
+                    logUp(res.token)
+                } 
             }).catch(() => {
                 props.openErrorPopup()
             }
