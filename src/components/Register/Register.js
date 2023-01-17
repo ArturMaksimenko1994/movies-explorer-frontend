@@ -29,11 +29,14 @@ const Register = (props) => {
         // здесь обработчик регистрации
         auth.register(validation.values.name, validation.values.email, validation.values.password)
             .then((res) => {
-                if (res.includes(409)) {
+                if (res) {
                     logUp()
                 }
-            }).catch(() => {
-                props.openErrorPopup()
+            }).catch((err) => {
+                if (err.includes(400)) {
+                    props.openErrorPopup()
+                }
+               
             }
             )
     }
