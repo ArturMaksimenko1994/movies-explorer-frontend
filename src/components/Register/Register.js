@@ -31,8 +31,6 @@ const Register = (props) => {
             .then((res) => {
                 if (res.includes(409)) {
                     logUp()
-                } else if (res.includes(400)) {
-                    props.openErrorPopup()
                 } else {
                     props.openErrorPopup()
                 }
