@@ -218,7 +218,7 @@ function App() {
         console.log(err)
       });
     handleTokenCheck()
-  }, [loggedIn]);
+  },[loggedIn]);
 
 
 
@@ -237,7 +237,6 @@ function App() {
   },
     []);
 
-  //!!!!!!!!!!
   function checkWindowWidth() {
     setWindowWidth(window.innerWidth);
   }

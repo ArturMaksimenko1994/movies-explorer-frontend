@@ -3,7 +3,7 @@ import ErrorPopup from '../ErrorPopup/ErrorPopup';
 
 function TheUserExists(props){
     return(
-        <ErrorPopup text={`Пользователь уже существует`} isOpen={props.isOpen} onClose={props.onClose}/>
+        <ErrorPopup text={`Пользователь создан`} isOpen={props.isOpen} onClose={props.onClose}/>
     )
 }
 

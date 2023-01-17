@@ -30,7 +30,9 @@ const Register = (props) => {
         auth.register(validation.values.name, validation.values.email, validation.values.password)
             .then((res) => {
                 if (res) {
-                    logUp()
+                    props.openUserExists() 
+                } else {
+                    props.openErrorPopup()
                 }
             }).catch(() => {
                 props.openErrorPopup()
