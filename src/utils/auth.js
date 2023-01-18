@@ -18,8 +18,12 @@ export const register = (name, email, password) => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({ name, email, password }),
-    }).then((res) => {
+    })
+        .then((res) => {
             return checkResponce(res);
+        })
+        .catch((error) => {
+            console.log('myError', error)
         });
 };
 
@@ -39,7 +43,7 @@ export const authorize = (email, password) => {
         .then((res) => {
             return res;
         })
-        .catch((error)=>{
+        .catch((error) => {
         })
 };
 

@@ -18,9 +18,11 @@ const Register = (props) => {
 
     const navigate = useNavigate();
 
-    function logUp() {
-        props.openUserExists()
-        navigate('/signin', { replace: true });
+    function logUp(token) {
+        props.registerModalPopap()
+        localStorage.setItem("token", token);
+        props.handleLogin();
+        navigate('/movies', { replace: true });
     }
 
     //регистрация пользователя
@@ -29,14 +31,14 @@ const Register = (props) => {
         // здесь обработчик регистрации
         auth.register(validation.values.name, validation.values.email, validation.values.password)
             .then((res) => {
-                if (res) {
-                    logUp()
+                if (res.token) {
+                    logUp(res.token)
+                } else if (res?.includes(409)) {
+                    props.openUserExists()
+                    navigate('/signin', { replace: true });
                 }
-            }).catch((err) => {
-                if (err.includes(400)) {
-                    props.openErrorPopup()
-                }
-               
+            }).catch((error) => {
+                props.openUserExists()
             }
             )
     }

@@ -27,6 +27,7 @@ import NothingFoundPopup from '../NothingFoundPopup/NothingFoundPopup';
 import WrongUserInfoPopup from '../WrongUserInfoPopup/WrongUserInfoPopup';
 import UserInfoChangedPopup from '../UserInfoChangedPopup/UserInfoChangedPopup';
 import TheUserExists from '../TheUserExists/TheUserExists';
+import RegisterModalPopap from '../RegisterModalPopap/RegisterModalPopap';
 
 // импортируем CSS
 import './App.css';
@@ -51,6 +52,7 @@ function App() {
   const [isWrongUserInfoPopupOpen, setIsWrongUserInfoPopupOpen] = useState(false);
   const [isUserInfoChangedPopupOpen, setIsUserInfoChangedPopupOpen] = useState(false);
   const [isTheUserExists, setTheUserExists] = useState(false);
+  const [isRegisterModalPopap, setRegisterModalPopap] = useState(false);
 
   const [loggedIn, setLoggedIn] = useState();
   const handleLogin = () => {
@@ -319,6 +321,7 @@ function App() {
     setIsWrongUserInfoPopupOpen(false)
     setIsUserInfoChangedPopupOpen(false)
     setTheUserExists(false)
+    setRegisterModalPopap(false)
   }
 
   function openWrongUserInfoPopup() {
@@ -327,6 +330,10 @@ function App() {
 
   function openTheUserExists() {
     setTheUserExists(true)
+  }
+
+  function openRegisterModalPopap() {
+    setRegisterModalPopap(true)
   }
 
   return (
@@ -340,7 +347,8 @@ function App() {
         <WrongUserInfoPopup isOpen={isWrongUserInfoPopupOpen} onClose={closeAllPopups} />
         <UserInfoChangedPopup isOpen={isUserInfoChangedPopupOpen} onClose={closeAllPopups} />
         <TheUserExists isOpen={isTheUserExists} onClose={closeAllPopups} />
-
+        <RegisterModalPopap isOpen={isRegisterModalPopap} onClose={closeAllPopups} />
+        
         <Header loggedIn={loggedIn} />
 
         <Routes>
@@ -396,6 +404,8 @@ function App() {
           <Route path="/signup" element={
             <User title="Добро пожаловать!">
               <Register
+              registerModalPopap={openRegisterModalPopap}
+              handleLogin={handleLogin}
               openUserExists={openTheUserExists}
               openErrorPopup={openWrongUserInfoPopup} />
             </User>} />

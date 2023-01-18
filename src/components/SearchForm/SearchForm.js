@@ -24,6 +24,10 @@ const SearchForm = (props) => {
         props.onSearchMovies(value);
     }
 
+    function handleFilterCheckbox() {
+        props.onSearchMovies(value);
+    }
+
     return (
         <div className="search-row">
             <div className="search-row__container">
@@ -42,9 +46,10 @@ const SearchForm = (props) => {
                     </form>
                     <div className="search__checkbox">
                         <FilterCheckbox
+                            handleSubmit={handleFilterCheckbox}
                             isSelected={props.isSelected}
                             searchShortFilms={props.searchShortFilms}
-                            searchAllFilms={props.searchAllFilms}/>
+                            searchAllFilms={props.searchAllFilms} />
                     </div>
                 </div>
             </div>
