@@ -190,7 +190,7 @@ function App() {
     }
   }, []);
 
-  // 
+ 
   useEffect(() => {
     mainApi.updateToken();
     mainApi.getUserInfoApi() //получение user-info и запись в currentUser
