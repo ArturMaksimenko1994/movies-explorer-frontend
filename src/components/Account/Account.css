@@ -10,10 +10,6 @@
     transition: .3s;
 }
 
-.account:hover {
-    opacity: .7;
-}
-
 .account__img {
     width: 10px;
     height: 10px;

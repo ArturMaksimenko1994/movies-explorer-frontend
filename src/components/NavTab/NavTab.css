@@ -21,6 +21,15 @@
     width: 96px;
     height: 36px;
     text-align: center;
+    transition: .3s;
+}
+
+.nav-tab__item:hover {
+    background: #3456F3;
+}
+
+.nav-tab__item:hover .nav-tab__link {
+    color: white;
 }
 
 .nav-tab__link {
@@ -28,6 +37,11 @@
     cursor: pointer;
     color: #000000;
     scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 @media screen and (max-width: 604px) {

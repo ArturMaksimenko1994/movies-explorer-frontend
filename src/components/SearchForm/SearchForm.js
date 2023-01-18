@@ -1,32 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import FilterCheckBox from "../FilterCheckBox/FilterCheckBox";
+import FilterCheckbox from "./FilterCheckbox/FilterCheckbox";
 import "./SearchForm.css"
 
-const SearchForm = () => {
+const SearchForm = (props) => {
+
+    const [value, setValue] = useState('');
+
+    useEffect(() => {
+        const keyWord = localStorage.getItem('keyWord');
+        if (!props.isSaved && keyWord) {
+            setValue(keyWord)
+        }
+    }
+        , [])
+
+    function handleChange(e) {
+        setValue(e.target.value);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        props.onSearchMovies(value);
+    }
+
+    function handleFilterCheckbox() {
+        props.onSearchMovies(value);
+    }
+
     return (
-        <section className="search-row">
+        <div className="search-row">
             <div className="search-row__container">
                 <div className="search-row__hardly">
-                    <form className="search-form">
+                    <form className="search-form" onSubmit={handleSubmit}>
                         <input
                             className="search-form__input"
                             type="text"
                             placeholder="Фильм"
-                            required
+                            value={value}
+                            onChange={handleChange}
                         />
                         <div className="search-form__bottom" >
                             <button className="search-form__btn" type="submit"></button>
                         </div>
-
                     </form>
                     <div className="search__checkbox">
-                        <FilterCheckBox />
-                        <p className="search__text">Короткометражки</p>
+                        <FilterCheckbox
+                            handleSubmit={handleFilterCheckbox}
+                            isSelected={props.isSelected}
+                            searchShortFilms={props.searchShortFilms}
+                            searchAllFilms={props.searchAllFilms} />
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     )
 }
 

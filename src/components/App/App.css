@@ -6,7 +6,7 @@ html {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-family: Inter, sans-serif;
     box-sizing: border-box;
     width: auto;

@@ -11,34 +11,6 @@
   grid-row-gap: 38px;
   justify-content: center;
   padding: 70px 70px 50px 70px;
-  margin: 0 0 60px;
-}
-
-.movies-cardlist__show {
-  background: #F4F4F4;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #000000;
-  outline: none;
-  border: none;
-  max-width: 320px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 11px 0 9px 0;
-  margin: 0 auto;
-  cursor: pointer;
-  transition: .3s;
-}
-
-.movies-cardlist__show:hover {
-  opacity: 0.8;
 }
 
 @media screen and (max-width: 828px) {
